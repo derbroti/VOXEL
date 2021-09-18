@@ -17,9 +17,9 @@ during the build process:
   - At least 60 GB of free disk space
   - At least 8 GB of RAM (4 GB + 4 GB swap might also work)
 
-### Packet dependencies
+### Package dependencies
 
-The following packets are required to build the system and to generate
+The following packages are required to build the system and to generate
 certificates (`libnss3-tools`). All additional dependencies are included in the
 Chromium codebase.
 
@@ -29,8 +29,8 @@ git python binutils libnss3-tools
 ### Video files
 
 We provide links to video files already prepared to be streamed with VOXEL.
-The chromium server code requires the videos to include an HTTP response header.
-Additionally, to be able to utilize all VOXEL features, prepared Manifest mpds are provided as well.
+The Chromium server code requires the videos to include an HTTP response header.
+Additionally, to be able to utilize all VOXEL features, prepared Manifest files are provided as well.
 
 You can find the video files here: https://nextcloud.mpi-inf.mpg.de/index.php/s/e8e3C977wg2Kkty
 The share is, for now, password protected, if you are interested, message us and we will provide the password. The video files will be publicly accessible soon.
@@ -77,8 +77,8 @@ the `PORT` variables in the run scripts.
 Start the server with the `run-server.sh` script. This script requires a path to
 a video directory.
 
-**Note:** The video directory path must point to the *parent* folder containing
-the `www.example.org` folder. For example, if the folder structure looks like
+The video directory path must point to the *parent* folder containing the
+`www.example.org` folder. For example, if the folder structure looks like
 
 ```
 cache-bbb/www.example.org/slipstream-bbb.mpd
@@ -89,6 +89,10 @@ the run script should be called as
 ```
 ./run-server.sh cache-bbb
 ```
+
+**Note:** Do **not** use relative paths containing `..`, since the server
+executable ignores them and there is no error message if a non-existing
+directory is specified.
 
 **Wait until the message `Server Ready!` is displayed. The video files are
 loaded into RAM, which can take a few seconds.**
