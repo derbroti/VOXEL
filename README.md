@@ -32,7 +32,7 @@ We provide links to video files already prepared to be streamed with VOXEL.
 The Chromium server code requires the videos to include an HTTP response header.
 Additionally, to be able to utilize all VOXEL features, prepared Manifest files are provided as well.
 
-You can find the video files here: https://nextcloud.mpi-inf.mpg.de/index.php/s/e8e3C977wg2Kkty
+You can find the video files here: https://nextcloud.mpi-inf.mpg.de/index.php/s/ef4QQSDBAkck8Cq
 The share is, for now, password protected, if you are interested, message us and we will provide the password. The video files will be publicly accessible soon.
 
 ## Build
