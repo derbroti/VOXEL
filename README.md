@@ -1,8 +1,21 @@
+# VOXEL
+
+This repository provides the files and scripts required to build a VOXEL-enabled
+server and client and perform a simple video stream.
+
+The system is based on the sample QUIC server and client implementations
+provided as part of the [Chromium project](https://www.chromium.org/). Both the
+server and client are headless implementations so the video is written to disk
+during the stream and can be inspected afterwards.
+
 ## Repository structure
 
 To save space, this repository only contains the modified files from the
 Chromium codebase (`net` folder). The `prepare.sh` scripts performs the
 first-time setup and downloads the remaining code.
+
+The network traces used for the experiments are located in the
+`bandwidth-traces` folder.
 
 ## Requirements
 
@@ -17,6 +30,14 @@ during the build process:
   - At least 60 GB of free disk space
   - At least 8 GB of RAM (4 GB + 4 GB swap might also work)
 
+#### Hardware
+
+To replicate the full end-to-end system, three separate machines (client,
+server, traffic shaper) are required. This repository only includes scripts
+for a simplified, local layout without a traffic shaper. However, the network
+traces are provided to enable the full replication of the system, albeit with
+additional effort.
+
 ### Package dependencies
 
 The following packages are required to build the system and to generate
@@ -30,7 +51,7 @@ git python binutils libnss3-tools
 
 We provide links to video files already prepared to be streamed with VOXEL.
 The Chromium server code requires the videos to include an HTTP response header.
-Additionally, to be able to utilize all VOXEL features, prepared Manifest files are provided as well.
+Additionally, to be able to utilize all VOXEL features, prepared manifest files are provided as well.
 
 You can find the video files here: https://nextcloud.mpi-inf.mpg.de/index.php/s/ef4QQSDBAkck8Cq
 The share is, for now, password protected, if you are interested, message us and we will provide the password. The video files will be publicly accessible soon.
@@ -59,15 +80,14 @@ modifying the `-days` parameters in
 
 ## Run the system
 
-To run the system, first start the server, optionally a traffic shaper (not
-included in this repository), and then the client.
+To run the system, first start the server, optionally a traffic shaper, and
+then the client.
 
 The bandwidth traces used in the experiments are included in the
-`bandwidth-traces` folder, but we provide no traffic shaper script here. The
-trace files contain two columns, the first corresponds to the time in seconds
-since the start of the trace, the second to the number of bytes transferred
-during the last second. In other words, each line corresponds to a bytes per
-second value.
+`bandwidth-traces` folder. The trace files contain two columns, the first
+corresponds to the time in seconds since the start of the trace, the second to
+the number of bytes transferred during the last second. In other words, each
+line corresponds to a bytes-per-second value.
 
 The default port used by the system is `6121` and can be modified by changing
 the `PORT` variables in the run scripts.
