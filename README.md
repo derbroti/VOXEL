@@ -33,7 +33,14 @@ during the build process:
 #### Hardware
 
 To replicate the full end-to-end system, three separate machines (client,
-server, traffic shaper) are required. This repository only includes scripts
+server, traffic-shaper) are required. The traffic-shapher, in our testbed, 
+has a direct physical network connection to the client 
+and server, and, thus, needs to have two network interfaces.
+
+The connections client-shaper and shaper-server are placed in different subnets.
+The shaper interfaces are bridged and the host is configured to forward ip traffic.
+
+This repository only includes scripts
 for a simplified, local layout without a traffic shaper. However, the network
 traces are provided to enable the full replication of the system, albeit with
 additional effort.
@@ -53,8 +60,7 @@ We provide links to video files already prepared to be streamed with VOXEL.
 The Chromium server code requires the videos to include an HTTP response header.
 Additionally, to be able to utilize all VOXEL features, prepared manifest files are provided as well.
 
-You can find the video files here: https://nextcloud.mpi-inf.mpg.de/index.php/s/ef4QQSDBAkck8Cq
-The share is, for now, password protected, if you are interested, message us and we will provide the password. The video files will be publicly accessible soon.
+You can find the video files here: https://nextcloud.mpi-inf.mpg.de/index.php/s/e8e3C977wg2Kkty.
 
 ## Build
 
@@ -87,7 +93,8 @@ The bandwidth traces used in the experiments are included in the
 `bandwidth-traces` folder. The trace files contain two columns, the first
 corresponds to the time in seconds since the start of the trace, the second to
 the number of bytes transferred during the last second. In other words, each
-line corresponds to a bytes-per-second value.
+line corresponds to a bytes-per-second value. Feeding this file line by line to `tc`, 
+updating the available throughout each time, with a one per second, replays the network trace. 
 
 The default port used by the system is `6121` and can be modified by changing
 the `PORT` variables in the run scripts.
