@@ -1,21 +1,28 @@
-# VOXEL
+# About
 
-This repository provides the files and scripts required to build a VOXEL-enabled
-server and client and perform a simple video stream.
+This repository contains the source code as well as the scripts required to build a *VOXEL*-enabled server and client, and stream videos from the server to the client using VOXEL.
 
-The system is based on the sample QUIC server and client implementations
-provided as part of the [Chromium project](https://www.chromium.org/). Both the
-server and client are headless implementations so the video is written to disk
-during the stream and can be inspected afterwards.
-
-## Repository structure
-
-To save space, this repository only contains the modified files from the
-Chromium codebase (`net` folder). The `prepare.sh` scripts performs the
+The implementation is based on the sample QUIC server and client implementations provided as part of the [Chromium project](https://www.chromium.org/). To save space, this repository *only* contains the files modified from the Chromium codebase (in the `net` folder). The `prepare.sh` scripts performs the
 first-time setup and downloads the remaining code.
 
-The network traces used for the experiments are located in the
-`bandwidth-traces` folder.
+Both the server and client are *headless* implementations: The video is, hence, written to disk during the stream and can be inspected afterwards.
+
+The artifacts are organized as follows.
+
+```
+.
+├── README.md
+├── bandwidth-traces      # » Network traces used for experiments
+├── generate-certs.sh     # » Utility to generate server certificates
+├── make.sh               # » Invokes the Chromium build tool
+├── net                   # » Modified files from the Chromium codebase
+├── ninja-files           # » Patches to the Chromium build files
+├── prepare.sh            # » Fetches artifacts from the Chromium project
+├── run-client.sh         # » Runs the client
+├── run-server.sh         # » Runs the server
+└── update-mod-links.sh   # » Links files in `net` with the Chromium codebase
+```
+
 
 ## Requirements
 
