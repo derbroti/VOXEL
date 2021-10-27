@@ -17,7 +17,7 @@ The artifacts are organized as follows.
 ├── make.sh               # » Invokes Chromium build tool
 ├── net                   # » Modified files from Chromium codebase
 ├── ninja-files           # » Patches to Chromium build files
-├── prepare.sh            # » Fetches artifacts from Chromium and runs builds
+├── prepare.sh            # » Fetches artifacts from Chromium and runs initial build
 ├── run-client.sh         # » Runs the client
 ├── run-server.sh         # » Runs the server
 └── update-mod-links.sh   # » Links files in `net` with Chromium codebase
@@ -26,7 +26,7 @@ The artifacts are organized as follows.
 
 ## Requirements
 
-We built and tested the (client and server) implementations on Ubuntu 20.04.3 (Focal Fossa) system. The implementations should work, in principle, on other Linux distributions, albeit some minor modifications may be required.
+We built and tested the (client and server) implementations on an Ubuntu 20.04.3 (Focal Fossa) system. The implementations should work, in principle, on other Linux distributions, albeit some minor modifications may be required.
 
 ### System requirements
 
