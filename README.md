@@ -2,6 +2,11 @@
 
 This repository contains the source code as well as the scripts required to build a *VOXEL*-enabled server and client, and stream videos from the server to the client using VOXEL.
 
+Please cite this work as follows (or use this [bibtex record](./bibtex.txt)).
+
+  > Palmer, M., Appel, M., Spiteri, K., Chandrasekaran, B., Feldmann, A., and Sitaraman, R. K. The subtle art of not worrying about losses: Optimizing video streaming with imperfect transmission. In Proceedings of the 17th International Conference on Emerging Networking EXperiments and Technologies (2021), CoNEXT ’21.
+
+
 The implementation is based on the sample QUIC server and client implementations provided as part of the [Chromium project](https://www.chromium.org/). To save space, this repository *only* contains the files modified from the Chromium codebase (in the `net` folder). The `prepare.sh` scripts performs the
 first-time setup and downloads the remaining code.
 

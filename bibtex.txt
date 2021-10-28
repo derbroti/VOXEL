@@ -1,0 +1,7 @@
+
+@inproceedings{Palmer-CoNEXT2021,
+    author = {Palmer, Mirko and Appel, Malte and Spiteri, Kevin and Chandrasekaran, Balakrishnan and Feldmann, Anja and Sitaraman, Ramesh K.},
+    booktitle = {Proceedings of the 17th International Conference on Emerging Networking EXperiments and Technologies},
+    series = {CoNEXT '21},
+    title = {{The subtle art of not worrying about losses: Optimizing video streaming with imperfect transmission}},
+    year = {2021}}
