@@ -4,7 +4,7 @@ This repository contains the source code as well as the scripts required to buil
 
 Please cite this work as follows (or use this [bibtex record](./bibtex.txt)).
 
-  > Palmer, M., Appel, M., Spiteri, K., Chandrasekaran, B., Feldmann, A., and Sitaraman, R. K. VOXEL: Cross-layer optimization for Video Streaming with Imperfect Transmission. In Proceedings of the 17th International Conference on Emerging Networking EXperiments and Technologies (2021), CoNEXT ’21.
+  > Palmer, M., Appel, M., Spiteri, K., Chandrasekaran, B., Feldmann, A., and Sitaraman, R. K. VOXEL: Cross-layer Optimization for Video Streaming with Imperfect Transmission. In Proceedings of the 17th International Conference on Emerging Networking EXperiments and Technologies (2021), CoNEXT ’21.
 
 
 The implementation is based on the sample QUIC server and client implementations provided as part of the [Chromium project](https://www.chromium.org/). To save space, this repository *only* contains the files modified from the Chromium codebase (in the `net` folder). The `prepare.sh` scripts performs the
